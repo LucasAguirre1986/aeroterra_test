@@ -1,0 +1,11 @@
+.logo {
+    width: 200px;
+}
+.menuOptions {
+    padding: 0;
+}
+
+.navbar.scrolling-navbar.top-nav-collapse {
+    background-color: #00000075 !important;
+    transition: background .5s ease-in-out,padding .5s ease-in-out
+}

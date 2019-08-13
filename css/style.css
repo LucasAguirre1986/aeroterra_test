@@ -1,11 +1,29 @@
+/* NAV */
 .logo {
     width: 200px;
 }
-.menuOptions {
-    padding: 0;
-}
-
 .navbar.scrolling-navbar.top-nav-collapse {
     background-color: #00000075 !important;
     transition: background .5s ease-in-out,padding .5s ease-in-out
+}
+
+/* OPTIONS */
+.menuOptions {
+    padding: 0;
+}
+.btnOptions {
+    font-size: 13px !important;
+}
+.iconOptions {
+    font-size: 18px !important;
+}
+
+/* MAP */
+#map {
+    width: 100%;
+    height: 400px;
+}
+.imgPopUp {
+    margin-bottom: 4px;
+    width: 134px;
 }

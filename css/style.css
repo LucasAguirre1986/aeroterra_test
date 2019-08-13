@@ -27,3 +27,7 @@
     margin-bottom: 4px;
     width: 134px;
 }
+.medium {
+    display: inline;
+    width: 90% !important;
+}

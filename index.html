@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- CDN LEAFLET CSS -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
 </head>
 
 <body class="grey lighten-3">
@@ -223,33 +223,48 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="md-form ml-0 mr-0">
-                                <input type="text" type="text" id="form1" class="form-control ml-0">
-                                <label for="form1" class="ml-0">Nombre</label>
+                                <input type="text" type="text" id="nombre" class="form-control ml-0">
+                                <label for="nombre" class="ml-0">Nombre</label>
                             </div>
                             <div class="md-form ml-0 mr-0">
-                                <input type="text" type="text" id="form1" class="form-control ml-0">
-                                <label for="form1" class="ml-0">Teléfono</label>
+                                <input type="text" type="text" id="telefono" class="form-control ml-0">
+                                <label for="telefono" class="ml-0">Teléfono</label>
                             </div>
                             <div class="md-form ml-0 mr-0">
-                                <select class="custom-select" size="4">
+                                <select class="custom-select" size="4" id="categoria">
                                     <option selected>Seleccione una Categoría</option>
                                     <option value="Comercial">Comercial</option>
                                     <option value="Residencial">Residencial</option>
                                     <option value="Mixta">Mixta</option>
                                 </select>
                             </div>
+                            <div class="text-center mt-4">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">Cancelar</span>
+                                    </button>
+                                    <button class="btn btn-cyan" id="siguiente">Siguiente
+                                        <i class="fas fa-new ml-1"></i>
+                                    </button>
+                                </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="md-form ml-0 mr-0">
-                                <input type="text" type="text" id="form1" class="form-control ml-0">
-                                <label for="form1" class="ml-0">Dirección</label>
+                            <div class="md-form input-group mb-4">
+                                <input type="text" class="form-control" placeholder="Ingresa dirección"
+                                    aria-label="" aria-describedby="material-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text md-addon" id="material-addon2">
+                                        <button class="btn btn-md btn-default">Buscar</button>
+                                    </span>
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="text-center mt-4">
-                            <button class="btn btn-cyan">Agregar
-                                <i class="fas fa-sign-in-alt ml-1"></i>
-                            </button>
+                            <div class="text-center mt-4">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">Cancelar</span>
+                                    </button>
+                                    <button class="btn btn-cyan" id="agregar">Agregar
+                                        <i class="fas fa-new ml-1"></i>
+                                    </button>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -258,30 +273,29 @@
         </div>
         <!-- FIN Modal "Agregar Nuevo"-->
 
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js"></script>
-    
-    <!-- Script Leaflet -->
-    <script
-        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
-    </script>
+        <!-- SCRIPTS -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js"></script>
 
-    <!-- Script Map -->
-    <script type="text/javascript"
-        src="js/script.js" >
-    </script>
+        <!-- Script Leaflet -->
+        <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+        </script>
 
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        new WOW().init();
-    </script>
+        <!-- Script Map, base de datos, modal -->
+        <script type="text/javascript" src="js/database.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/modal.js"></script>
+
+        <!-- Initializations -->
+        <script type="text/javascript">
+            // Animations initialization
+            new WOW().init();
+        </script>
 
 </body>
 

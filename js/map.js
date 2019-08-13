@@ -1,35 +1,3 @@
-// Arreglo de puntos de interes
-var ListaDePuntos = [
-    {
-        nombre: 'AEROTERRA S.A.',
-        direccion: 'Av. Eduardo Madero 1020, C1001 CABA',
-        telefono: '54 9 11 5272 0900)',
-        categoria: 'Comercial',
-        coordenada: [-34.555990, -58.474466]
-    },
-    {
-        nombre: 'MERCADOLIBRE S.A.',
-        direccion: 'Av. Eduardo Madero 1020, C1001 CABA',
-        telefono: '54 9 11 5272 0900)',
-        categoria: 'Comercial',
-        coordenada: [-34.561645, -58.479444]
-    },
-    {
-        nombre: 'PLATAFORMA 5 S.A.',
-        direccion: 'Av. Eduardo Madero 1020, C1001 CABA',
-        telefono: '54 9 11 5272 0900)',
-        categoria: 'Comercial',
-        coordenada: [-34.57197, -58.46649]
-    },
-    {
-        nombre: 'FARMACITY S.A.',
-        direccion: 'Av. Eduardo Madero 1020, C1001 CABA',
-        telefono: '54 9 11 5272 0900)',
-        categoria: 'Residencial',
-        coordenada: [-34.5437, -58.52348]
-    }
-];
-
 // Setea el map inicial
 var map = L.map('map').setView([-34.555990, -58.474466], 13);
 
@@ -39,6 +7,7 @@ L.tileLayer(
     }).addTo(map); // Define a map => Div del html
 
 // Recorre cada uno de los puntos del objeto "ListaDePuntos"
+// ListaDePuntos se encuentra en el script map
 ListaDePuntos.forEach(punto => {
     // Construye el card por cada punto
     let card = `
@@ -64,6 +33,7 @@ ListaDePuntos.forEach(punto => {
 
 var popup = L.popup();
 function onMapClick(e) {
+    $('#modalAgregar').modal('show'); 
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())

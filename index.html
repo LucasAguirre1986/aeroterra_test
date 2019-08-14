@@ -267,11 +267,17 @@
 
                                 </ul>
                             </div>
+                            <div class="alert alert-warning alert-dismissible fade alertt" role="alert" id="alert">
+                                <strong>Ups!</strong> Faltan datos por completar.
+                                <button type="button" class="close" id="close">
+                                    <span style="color:burlywood" aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                             <div class="text-center mt-4">
                                 <button type="button" class="btn btn-danger" id="anterior">
                                     <span aria-hidden="true" class="white-text">Anterior</span>
                                 </button>
-                                <button class="btn btn-cyan" id="agregar" >Agregar
+                                <button class="btn btn-cyan" id="agregar">Agregar
                                     <i class="fas fa-new ml-1"></i>
                                 </button>
                             </div>
@@ -287,8 +293,8 @@
 
 
         <!-- MODAL CONFIRMACION-->
-        <div class="modal fade left" id="modalConfirmacion" tabindex="-1" role="dialog"
-            aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+        <div class="modal fade left" id="modalConfirmacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true" data-backdrop="false">
             <div class="modal-dialog cascading-modal modal-notify modal-warning" role="document">
                 <!--Content-->
                 <div class="modal-content">
@@ -302,8 +308,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-3 text-center">
-                                <img src="http://www.ficaconsulting.com.do/cw/images/fica/art/20180323.jpg"
-                                    alt=""
+                                <img src="http://www.ficaconsulting.com.do/cw/images/fica/art/20180323.jpg" alt=""
                                     class="img-fluid z-depth-1-half rounded-circle">
                                 <div style="height: 10px"></div>
                             </div>
@@ -313,14 +318,14 @@
                                 </strong>
                                 <p>
                                     Se ha registrado correctamente en la base de datos el nuevo punto de interes.
-                                    <br><br>   
+                                    <br><br>
                                     Los cambios ya han sido actualizado en el mapa.
                                 </p>
                                 <br>
                                 <br>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                
+
                                 </div>
                             </div>
                         </div>

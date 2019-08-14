@@ -1,3 +1,4 @@
+// BD SEED  ===============================================================
 // Script que contiene el objeto para usar como base de datos (temp)
 // Arreglo de puntos de interes
 var ListaDePuntos = [

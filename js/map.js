@@ -22,6 +22,7 @@ function onMapClick(e) {
     categoriaForm.value = "";
     latitudForm.textContent = "";
     longitudForm.textContent = "";
+    divAlert.classList.remove('show') // Elimina si hay alertas
     document.getElementById("listaResultado").innerHTML = "" // Limpia los LI
 
     $('#modalAgregar').modal('show'); // Activa el modal

@@ -18,17 +18,19 @@ let latitudForm = document.querySelector('#latitud')
 let longitudForm = document.querySelector('#longitud')
 let agregarForm = document.querySelector('#agregar')
 let btnBuscar = document.querySelector('#buscar')
+let btnCloseAlert = document.querySelector('#close')
+let divAlert = document.querySelector('#alert')
 
 // TABS ===============================================================
-function activarTabs(numeroTab){
-    if(numeroTab==1){
+function activarTabs(numeroTab) {
+    if (numeroTab == 1) {
         tabPaso1.classList.add('show')
         tabPaso1.classList.add('active')
         tabPaso2.classList.remove('show')
         tabPaso2.classList.remove('active')
         tab1.classList.add('active')
         tab2.classList.remove('active')
-    }else{
+    } else {
         tabPaso1.classList.remove('show')
         tabPaso1.classList.remove('active')
         tabPaso2.classList.add('show')
@@ -49,6 +51,7 @@ btnAgregar.addEventListener('click', function () {
     categoriaForm.value = "";
     latitudForm.textContent = "";
     longitudForm.textContent = "";
+    divAlert.classList.remove('show') // Elimina si hay alertas
     document.getElementById("listaResultado").innerHTML = "" // Limpia los LI
 
     $('#modalAgregar').modal('show'); // Activa el modal
@@ -65,24 +68,28 @@ btnSiguiente.addEventListener('click', function () {
 btnAnterior.addEventListener('click', function () {
     activarTabs(1)
 })
+btnCloseAlert.addEventListener('click', function () {
+    divAlert.classList.remove('show')
+})
 
 // AGREGAR PUNTO ==============================================================
 agregarForm.addEventListener('click', function () {
-
-    ListaDePuntos.push(
-        {
-            nombre: (nombreForm.value).toUpperCase(),
-            direccion: direccionForm.value,
-            telefono: telefonoForm.value,
-            categoria: categoriaForm.value,
-            coordenada: [Number(latitudForm.textContent), Number(longitudForm.textContent)]
-        }
-    )
-
-    // Ejecuta la funcion para crear los marcadores en el mapa
-    crearMarcadoresMap(ListaDePuntos)
-    
-    $('#modalConfirmacion').modal('show'); // Activa el modal de confirmacion   
+    if (!nombreForm.value || !direccionForm.value || !telefonoForm.value || !categoriaForm.value) {
+        divAlert.classList.add('show')
+    } else {
+        ListaDePuntos.push(
+            {
+                nombre: (nombreForm.value).toUpperCase(),
+                direccion: direccionForm.value,
+                telefono: telefonoForm.value,
+                categoria: categoriaForm.value,
+                coordenada: [Number(latitudForm.textContent), Number(longitudForm.textContent)]
+            }
+        )
+        // Ejecuta la funcion para crear los marcadores en el mapa
+        crearMarcadoresMap(ListaDePuntos)
+        $('#modalConfirmacion').modal('show'); // Activa el modal de confirmacion 
+    }
 })
 
 // BUSCAR COORDENADAS ==============================================================

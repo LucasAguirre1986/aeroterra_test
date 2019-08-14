@@ -89,8 +89,8 @@
         <div class="container-fluid mt-5">
             <div class="card mb-4 wow fadeIn">
                 <div class="card-body d-sm-flex justify-content-between menuOptions">
-                    <button type="button" class="btn btn-primary btn-md btnOptions" data-toggle="modal"
-                        data-target="#modalAgregar"><i class="fas fa-map mr-1 iconOptions"></i>Agregar Nuevo
+                    <button type="button" class="btn btn-primary btn-md btnOptions" id="nuevo"><i
+                            class="fas fa-map mr-1 iconOptions"></i>Agregar Nuevo
                     </button>
                 </div>
             </div>
@@ -212,26 +212,26 @@
                     <h5 class="mt-1 mb-2">Agregar nuevo</h5>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="true">Paso 1 de 2</a>
+                            <a class="nav-link active" id="paso1-tab" >Paso 1 de 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                aria-controls="profile" aria-selected="false">Paso 2 de 2</a>
+                            <a class="nav-link" id="paso2-tab" >Paso 2 de 2</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade" id="paso1">
                             <div class="md-form ml-0 mr-0">
-                                <input type="text" type="text" id="nombre" class="form-control ml-0">
+                                <input required type="text" type="text" autocomplete="off" id="nombre"
+                                    class="form-control ml-0" autofocus>
                                 <label for="nombre" class="ml-0">Nombre</label>
                             </div>
                             <div class="md-form ml-0 mr-0">
-                                <input type="text" type="text" id="telefono" class="form-control ml-0">
+                                <input required type="text" type="text" autocomplete="off" id="telefono"
+                                    class="form-control ml-0">
                                 <label for="telefono" class="ml-0">Teléfono</label>
                             </div>
                             <div class="md-form ml-0 mr-0">
-                                <select class="custom-select" size="4" id="categoria">
+                                <select class="custom-select" size="4" id="categoria" required>
                                     <option selected>Seleccione una Categoría</option>
                                     <option value="Comercial">Comercial</option>
                                     <option value="Residencial">Residencial</option>
@@ -239,32 +239,42 @@
                                 </select>
                             </div>
                             <div class="text-center mt-4">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true" class="white-text">Cancelar</span>
-                                    </button>
-                                    <button class="btn btn-cyan" id="siguiente">Siguiente
-                                        <i class="fas fa-new ml-1"></i>
-                                    </button>
-                                </div>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="white-text">Cancelar</span>
+                                </button>
+                                <button class="btn btn-cyan" id="siguiente">Siguiente
+                                    <i class="fas fa-new ml-1"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade" id="paso2">
                             <div class="md-form input-group mb-4">
-                                <input type="text" class="form-control" placeholder="Ingresa dirección"
-                                    aria-label="" aria-describedby="material-addon2">
+                                
+                                <input type="text" autocomplete="off" class="form-control" id="direccion"
+                                    placeholder="Ingresa dirección" >
                                 <div class="input-group-append">
                                     <span class="input-group-text md-addon" id="material-addon2">
-                                        <button class="btn btn-md btn-default">Buscar</button>
+                                        <button class="btn btn-md btn-default" id="buscar">Buscar</button>
                                     </span>
                                 </div>
                             </div>
+                            <p class="latLong">
+                                <strong>Lat: </strong> <span id="latitud"></span> <strong>Lng:</strong> <span id="longitud"></span> <br>
+                            </p>
+                            <div class="lista">                                    
+                                <ul class="list-group" id="listaResultado">
+                                    
+                                </ul>
+                            </div>
                             <div class="text-center mt-4">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true" class="white-text">Cancelar</span>
-                                    </button>
-                                    <button class="btn btn-cyan" id="agregar">Agregar
-                                        <i class="fas fa-new ml-1"></i>
-                                    </button>
-                                </div>
+                                <button type="button" class="btn btn-danger" id="anterior">
+                                    <span aria-hidden="true" class="white-text">Anterior</span>
+                                </button>
+                                <button class="btn btn-cyan" id="agregar" data-dismiss="modal"
+                                    aria-label="Close">Agregar
+                                    <i class="fas fa-new ml-1"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -288,8 +298,8 @@
 
         <!-- Script Map, base de datos, modal -->
         <script type="text/javascript" src="js/database.js"></script>
-        <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript" src="js/modal.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
 
         <!-- Initializations -->
         <script type="text/javascript">

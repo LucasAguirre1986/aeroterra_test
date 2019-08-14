@@ -49,6 +49,7 @@ btnAgregar.addEventListener('click', function () {
     categoriaForm.value = "";
     latitudForm.textContent = "";
     longitudForm.textContent = "";
+    document.getElementById("listaResultado").innerHTML = "" // Limpia los LI
 
     $('#modalAgregar').modal('show'); // Activa el modal
     $('.nav-tabs a[href="#home"]').click(); // Se posiciona en el primer tab
@@ -65,7 +66,7 @@ btnAnterior.addEventListener('click', function () {
     activarTabs(1)
 })
 
-// FORM ==============================================================
+// AGREGAR PUNTO ==============================================================
 agregarForm.addEventListener('click', function () {
 
     ListaDePuntos.push(
@@ -80,6 +81,8 @@ agregarForm.addEventListener('click', function () {
 
     // Ejecuta la funcion para crear los marcadores en el mapa
     crearMarcadoresMap(ListaDePuntos)
+    
+    $('#modalConfirmacion').modal('show'); // Activa el modal de confirmacion   
 })
 
 // BUSCAR COORDENADAS ==============================================================

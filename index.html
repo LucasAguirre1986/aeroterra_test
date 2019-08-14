@@ -204,7 +204,7 @@
                 <!--Header-->
                 <div class="modal-header">
                     <img src="http://www.ficaconsulting.com.do/cw/images/fica/art/20180323.jpg"
-                        class="rounded-circle img-responsive" alt="Avatar photo">
+                        class="rounded-circle img-responsive" alt="">
                 </div>
                 <!--Body-->
 
@@ -212,10 +212,10 @@
                     <h5 class="mt-1 mb-2">Agregar nuevo</h5>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="paso1-tab" >Paso 1 de 2</a>
+                            <a class="nav-link active" id="paso1-tab">Paso 1 de 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="paso2-tab" >Paso 2 de 2</a>
+                            <a class="nav-link" id="paso2-tab">Paso 2 de 2</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -249,9 +249,9 @@
                         </div>
                         <div class="tab-pane fade" id="paso2">
                             <div class="md-form input-group mb-4">
-                                
+
                                 <input type="text" autocomplete="off" class="form-control" id="direccion"
-                                    placeholder="Ingresa dirección" >
+                                    placeholder="Ingresa dirección">
                                 <div class="input-group-append">
                                     <span class="input-group-text md-addon" id="material-addon2">
                                         <button class="btn btn-md btn-default" id="buscar">Buscar</button>
@@ -259,19 +259,19 @@
                                 </div>
                             </div>
                             <p class="latLong">
-                                <strong>Lat: </strong> <span id="latitud"></span> <strong>Lng:</strong> <span id="longitud"></span> <br>
+                                <strong>Lat: </strong> <span id="latitud"></span> <strong>Lng:</strong> <span
+                                    id="longitud"></span> <br>
                             </p>
-                            <div class="lista">                                    
+                            <div class="lista">
                                 <ul class="list-group" id="listaResultado">
-                                    
+
                                 </ul>
                             </div>
                             <div class="text-center mt-4">
                                 <button type="button" class="btn btn-danger" id="anterior">
                                     <span aria-hidden="true" class="white-text">Anterior</span>
                                 </button>
-                                <button class="btn btn-cyan" id="agregar" data-dismiss="modal"
-                                    aria-label="Close">Agregar
+                                <button class="btn btn-cyan" id="agregar" >Agregar
                                     <i class="fas fa-new ml-1"></i>
                                 </button>
                             </div>
@@ -282,6 +282,62 @@
             </div>
         </div>
         <!-- FIN Modal "Agregar Nuevo"-->
+
+
+
+
+        <!-- MODAL CONFIRMACION-->
+        <div class="modal fade left" id="modalConfirmacion" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog cascading-modal modal-notify modal-warning" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading">Información!</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-3 text-center">
+                                <img src="http://www.ficaconsulting.com.do/cw/images/fica/art/20180323.jpg"
+                                    alt=""
+                                    class="img-fluid z-depth-1-half rounded-circle">
+                                <div style="height: 10px"></div>
+                            </div>
+                            <div class="col-9">
+                                <strong>
+                                    Perfecto!!
+                                </strong>
+                                <p>
+                                    Se ha registrado correctamente en la base de datos el nuevo punto de interes.
+                                    <br><br>   
+                                    Los cambios ya han sido actualizado en el mapa.
+                                </p>
+                                <br>
+                                <br>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- FIN CONFIRMACION-->
+
+
+
+
+
+
+
+
 
         <!-- SCRIPTS -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

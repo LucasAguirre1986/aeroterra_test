@@ -21,7 +21,7 @@
 /* MAP */
 #map {
     width: 100%;
-    height: 400px;
+    height: 440px;
 }
 .imgPopUp {
     margin-bottom: 4px;
@@ -52,7 +52,11 @@ hr {
     font-size: 14px;
     cursor: pointer;
 }
-
 .alertt {
     margin-top: -50px;
+}
+.imgPop {
+    border-radius: 5px;
+    border: 5px solid #eaeaea;
+    margin-bottom: 14px;
 }

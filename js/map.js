@@ -1,6 +1,6 @@
 // MAPA  ===============================================================
 // Setea el map inicial
-var map = L.map('map').setView([-34.555990, -58.474466], 14);
+var map = L.map('map').setView([-34.57932341790909, -58.42580795288085], 13);
 
 L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,7 +30,7 @@ function onMapClick(e) {
 
     // busca la direccion => Funcion en modal.js
     buscarDireccionXCoordenada(e.latlng.lat, e.latlng.lng)
-        .then((data)=>{
+        .then((data) => {
             direccionForm.value = data.display_name;
             latitudForm.textContent = e.latlng.lat;
             longitudForm.textContent = e.latlng.lng;
@@ -42,7 +42,7 @@ map.on('click', onMapClick);
 
 // CIRCULO EN EL MAPA ===============================================================
 // // Genera un circulo en el mapa ( Area )
-L.circle([-34.555990, -58.474466], 1100, {
+L.circle([-34.57932341790909, -58.42580795288085], 1100, {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.2
@@ -58,7 +58,7 @@ function crearMarcadoresMap(ListaDePuntos) {
         let card = `
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <img src="https://www.pcactual.com/medio/2017/06/30/google-maps_51b78e0b.jpg" class="imgPopUp"/>
+            <img src="https://picsum.photos/id/${punto.img}/300/150" style="max-width: 100% !important;" class="imgPop"/>
             <h5>${punto.nombre}</h5>
             <strong>Dirección: </strong><span class="nombrePropio">${punto.direccion}</span><br><hr>
             <strong>Categoria: </strong>${punto.categoria}<br>

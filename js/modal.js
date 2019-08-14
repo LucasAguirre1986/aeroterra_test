@@ -83,7 +83,8 @@ agregarForm.addEventListener('click', function () {
                 direccion: direccionForm.value,
                 telefono: telefonoForm.value,
                 categoria: categoriaForm.value,
-                coordenada: [Number(latitudForm.textContent), Number(longitudForm.textContent)]
+                coordenada: [Number(latitudForm.textContent), Number(longitudForm.textContent)],
+                img: Math.floor(Math.random() * 1080) + 1 // Elige un id aleatorio
             }
         )
         // Ejecuta la funcion para crear los marcadores en el mapa
